@@ -7,15 +7,28 @@ buildscript {
         ndkVersion = "27.1.12297006"
         kotlinVersion = "2.0.21"
     }
+
     repositories {
         google()
         mavenCentral()
     }
+
     dependencies {
-        classpath("com.android.tools.build:gradle")
+        classpath("com.android.tools.build:gradle:8.3.1")
         classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.21")
+    }
+
+    // Disable the UnsafeOptInUsageError lint check (react-native-maps)
+    subprojects {
+        plugins.withId("com.android.library") {
+            android {
+                lintOptions {
+                    disable "UnsafeOptInUsageError"
+                }
+            }
+        }
     }
 }
 
-apply plugin: "com.facebook.react.rootproject"
+apply plugin: "com.facebook.react"
