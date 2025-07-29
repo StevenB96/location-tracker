@@ -33,4 +33,18 @@ buildscript {
     }
 }
 
+// Add this block below the buildscript block:
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    configurations.all {
+        resolutionStrategy {
+            force 'com.google.android.gms:play-services-location:21.0.1'
+        }
+    }
+}
+
 apply plugin: "com.facebook.react"

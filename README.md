@@ -55,9 +55,13 @@ This test is not about pixel-perfect UI + design — we care about:
 ### 1. Frontend
 
 ```bash
-cd location-tracker 
-npm install
+cd location-tracker
 cd ios && pod install && cd ..
-npm run start
 npm run ios
+
+npm install
+npm run start
+npm run android
+npx react-native log-android
+adb logcat *:E
 ```
