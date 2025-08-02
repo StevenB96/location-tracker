@@ -18,7 +18,7 @@ const Router = () => {
   return (
     <RootStack.Navigator>
       <RootStack.Screen name="Map" component={MapScreen} />
-      <RootStack.Screen name="WorkoutComplete" component={WorkoutComplete} />
+      <RootStack.Screen name="Workout Complete" component={WorkoutComplete} />
     </RootStack.Navigator>
   );
 };

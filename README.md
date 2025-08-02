@@ -54,7 +54,7 @@ This test is not about pixel-perfect UI + design — we care about:
 
 ### 1. Frontend
 
-```bash
+```bash   
 cd location-tracker
 cd ios && pod install && cd ..
 npm run ios
